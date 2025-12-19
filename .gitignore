@@ -1,0 +1,7 @@
+# @project:  skels
+# @file:    .gitignore
+# @date:    Fri Dec 19 14:57:41 CST 2025
+# @version: 0.0.1
+# @brief:   git ignore file
+
+build/*
