@@ -18,6 +18,19 @@ CMAKE=
 CPPUNIT=
 SIMPLE=FALSE
 
+
+show_help()
+{
+    echo "Usage:"
+    echo "csk -[vhtcs] PROJECT_NAME"
+    echo "-h, deispay this"
+    echo "-v, diplay version"
+    echo "-t, include cppunit test"
+    echo "-c, create cmake project"
+    echo "-s, create simple project, (single file main enty point)"
+    date
+}
+
 OPTSTRING="vhts"
 while getopts ${OPTSTRING} opt; do
     case ${opt} in
@@ -27,7 +40,8 @@ while getopts ${OPTSTRING} opt; do
             exit 0
             ;;
         h)
-            HELP
+            #HELP
+            show_help
             exit 0;
             ;;
         t)
@@ -50,7 +64,6 @@ while getopts ${OPTSTRING} opt; do
     esac
 done
 shift $(($OPTIND-1))
-
 
 NAME=$1
 INFO=$2
