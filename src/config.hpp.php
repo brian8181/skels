@@ -2,7 +2,7 @@
 	/*
     *  @brief create skeleton
 	*  @file config_hpp.php
-	*  @date Fri, Dec 19, 2025 12:52:59 AM
+	*  @date Sat, Sep 20, 2025  9:24:24 PM
 	*  @version 0.0.1
 	*/
     $NAME=$argv[1];
