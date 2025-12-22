@@ -18,7 +18,6 @@ CMAKE=
 CPPUNIT=
 SIMPLE=FALSE
 
-
 show_help()
 {
     echo "Usage:"
@@ -69,31 +68,38 @@ NAME=$1
 INFO=$2
 VERSION="version 0.0.1";
 
+# set $ROOT to default $HOME
 ROOT="${HOME}"
-if [ ! -f "./.cskconfig" ]; then
+# find .cskconfig
+# search current woking dir
+if [ -f "./.cskconfig" ]; then
     source ./.cskconfig
-elif [ ! -f "${HOME}/.cskconfig" ]; then
+# search $HOME
+elif [ -f "${HOME}/.cskconfig" ]; then
     source "${HOME}/.cskconfig"
+# search local bin
+elif [ -f "${HOME}/bin/.cskconfig" ]; then
+    source "${HOME}/bin/.cskconfig"
 fi
 
-BIN="${ROOT}/.config/csk"
+CONFIG="${ROOT}/.config/csk"
 PROJ="./src/${NAME}"
 
 mkdir -p "${NAME}"/{src,test,man,doc}
 pushd "${NAME}"
 touch readme readme.md news copying authors changelog
-php ${BIN}/makefile.php "${NAME}" "$(date)" "version 0.0.1" > makefile
-php ${BIN}/gitignore.php "${NAME}" "$(date)" "version 0.0.1" > .gitignore
-php ${BIN}/CMakeLists.txt.php "${NAME}" > CMakeLists.txt
+php ${CONFIG}/makefile.php "${NAME}" "$(date)" "version 0.0.1" > makefile
+php ${CONFIG}/gitignore.php "${NAME}" "$(date)" "version 0.0.1" > .gitignore
+php ${CONFIG}/CMakeLists.txt.php "${NAME}" > CMakeLists.txt
 
 pushd ./src
 touch "${NAME}.hpp" "${NAME}.cpp" "${NAME}_test.hpp" "${NAME}_test.cpp"
-php ${BIN}/main.cpp.php "${NAME}" "$(date)" "${SIMPLE}" > main.cpp
-php ${BIN}/app.hpp.php "${NAME}" "$(date)" > "${NAME}.hpp"
-php ${BIN}/app.cpp.php "${NAME}" "$(date)" > "${NAME}.cpp"
-php ${BIN}/app_test.hpp.php "${NAME}_test" "$(date)" > "${NAME}_test.hpp"
-php ${BIN}/app_test.cpp.php "${NAME}_test" "$(date)" > "${NAME}_test.cpp"
-php ${BIN}/bash_color.hpp.php "${NAME}" "$(date)" > bash_color.hpp
-php ${BIN}/config.hpp.php "${NAME}" "$(date)" > config.hpp
+php ${CONFIG}/main.cpp.php "${NAME}" "$(date)" "${SIMPLE}" > main.cpp
+php ${CONFIG}/app.hpp.php "${NAME}" "$(date)" > "${NAME}.hpp"
+php ${CONFIG}/app.cpp.php "${NAME}" "$(date)" > "${NAME}.cpp"
+php ${CONFIG}/app_test.hpp.php "${NAME}_test" "$(date)" > "${NAME}_test.hpp"
+php ${CONFIG}/app_test.cpp.php "${NAME}_test" "$(date)" > "${NAME}_test.cpp"
+php ${CONFIG}/bash_color.hpp.php "${NAME}" "$(date)" > bash_color.hpp
+php ${CONFIG}/config.hpp.php "${NAME}" "$(date)" > config.hpp
 popd
 popd

@@ -38,6 +38,43 @@ function PRINT_INFO
     echo -e ${VERBOSE:+"$MSG"}
 }
 
+show_help()
+{
+    echo "Usage:"
+    echo "install -[vh]"
+    echo "-h, deispay this"
+    echo "-v, diplay version"
+    date
+}
+
+OPTSTRING="vha"
+while getopts ${OPTSTRING} opt; do
+  case ${opt} in
+    v)
+      INFO
+      echo -e "${FMT_FG_GREEN}${VERSION}${FMT_FG_RED} ${DEBUG:-debug}${FMT_RESET}"
+      exit 0
+      ;;
+    h)
+      HELP
+      exit 0;
+      ;;
+    a)
+      exit 0;
+      ;;
+	:)
+      PRINT_DEBUG "Option -${OPTARG} requires an argument."
+      exit 1
+      ;;
+    ?)
+      PRINT_DEBUG "Invalid option: -${OPTARG}."
+      exit 1
+      ;;
+  esac
+done
+shift $(($OPTIND-1))
+
+
 PRINT_INFO "$FILE -> Running ... @ $DATE"
 
 DIR=$(dirname "$0")
@@ -64,10 +101,14 @@ if [ -f "./.cskconfig" ]; then
 # search $HOME
 elif [ -f "${HOME}/.cskconfig" ]; then
     source "${HOME}/.cskconfig"
+# search local bin
+elif [ -f "${HOME}/bin/.cskconfig" ]; then
+    source "${HOME}/bin/.cskconfig"
 fi
 
-#BIN="${ROOT}/.config/csk"
-#PROJ="./src/${NAME}"
+#CONFIG="${ROOT}/.config/csk"
+#BIN=$ROOT/bin
+
 PRINT_DEBUG ROOT=$ROOT
 PRINT_INFO "copying project templates ..."
 mkdir -p "${ROOT}/.config/csk"
