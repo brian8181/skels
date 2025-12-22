@@ -70,6 +70,9 @@ $(BLD)/lib<?= $APPNAME ?>.a: $(OBJ)/main.o $(BLD)/<?= $APPNAME ?>.o
 $(OBJ)/<?= $APPNAME ?>.o: $(SRC)/<?= $APPNAME ?>.cpp
 	$(CXX) $(CXXFLAGS) $(CXXEXTRA) -c $(SRC)/<?= $APPNAME ?>.cpp -o $(OBJ)/<?= $APPNAME ?>.o
 
+$(BLD)/TEST_<?= $APPNAME ?>: $(TST)/TEST_config.cpp $(TST)/TEST_<?= $APPNAME ?>.cpp $(TST)/main.cpp
+	$(CXX) $(CXXFLAGS) $^ $(LDFLAGS) -o $@
+
 # rules <?= '<?= "\nTEST\n ?>' ?>
 
 # copy header to build dir

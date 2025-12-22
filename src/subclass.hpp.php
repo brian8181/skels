@@ -1,5 +1,5 @@
-#!/bin/bash
-
+# DEPERCATED use class.hpp.php
+#!/bin/php
 <?php
 	/*
     *  @brief create class skeleton

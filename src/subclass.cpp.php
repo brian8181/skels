@@ -1,5 +1,5 @@
-#!#/bin/php
-
+# DEPERCATED use class.cpp.php
+#!/bin/php
 <?php
 	/*
     *  @brief create class skeleton

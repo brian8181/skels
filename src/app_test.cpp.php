@@ -25,7 +25,7 @@
 #include <cppunit/CompilerOutputter.h>
 #include <cppunit/XmlOutputter.h>
 #include <netinet/in.h>
-#include "App_test.hpp"
+#include "TEST_<?= $APPNAME ?>.hpp"
 #include <string.h>
 
 using namespace CppUnit;
@@ -34,40 +34,40 @@ using namespace std;
 //HACK!
 int parse_options(int argc, char* argv[]);
 
-void AppTest::setUp()
+void TEST_<?= $APPNAME ?>::setUp()
 {
 }
 
-void AppTest::tearDown()
+void TEST_<?= $APPNAME ?>::tearDown()
 {
 }
 
-void AppTest::testNoOptions()
-{
-    CPPUNIT_ASSERT(parse_options(m_argc, m_argv) == 0);
-}
-
-void AppTest::testOptionHelp()
+void TEST_<?= $APPNAME ?>::testNoOptions()
 {
     CPPUNIT_ASSERT(parse_options(m_argc, m_argv) == 0);
 }
 
-void AppTest::testOptionHelpLong()
+void TEST_<?= $APPNAME ?>::testOptionHelp()
 {
     CPPUNIT_ASSERT(parse_options(m_argc, m_argv) == 0);
 }
 
-void AppTest::testOptionVerbose()
+void TEST_<?= $APPNAME ?>::testOptionHelpLong()
 {
     CPPUNIT_ASSERT(parse_options(m_argc, m_argv) == 0);
 }
 
-void AppTest::testOptionVerboseLong()
+void TEST_<?= $APPNAME ?>::testOptionVerbose()
+{
+    CPPUNIT_ASSERT(parse_options(m_argc, m_argv) == 0);
+}
+
+void TEST_<?= $APPNAME ?>::testOptionVerboseLong()
 {
    CPPUNIT_ASSERT(parse_options(m_argc, m_argv) == 0);
 }
 
-void AppTest::execute()
+void TEST_<?= $APPNAME ?>::execute()
 {
     // on head
     char** pstr = new char*;
@@ -85,12 +85,12 @@ void AppTest::execute()
     //char* argv_[3] {(char*)"./App", (char*)"abc", (char*)"abc"};
 }
 
-void AppTest::execute(int argc, char* argv[])
+void TEST_<?= $APPNAME ?>::execute(int argc, char* argv[])
 {
 
 }
 
-CPPUNIT_TEST_SUITE_REGISTRATION( AppTest );
+CPPUNIT_TEST_SUITE_REGISTRATION( TEST_<?= $APPNAME ?> );
 
 int main(int argc, char* argv[])
 {
@@ -115,7 +115,7 @@ int main(int argc, char* argv[])
     compileroutputter.write ();
 
     // Output XML for Jenkins CPPunit plugin
-    ofstream xmlFileOut("cppAppTestResults.xml");
+    ofstream xmlFileOut("cppTEST_<?= $APPNAME ?>Results.xml");
     XmlOutputter xmlOut(&collectedresults, xmlFileOut);
     xmlOut.write();
 
