@@ -55,16 +55,20 @@ PRINT_INFO "Installing scripts ..."
 # unintsall before existing files
 ./uninstall.sh
 
+# set $ROOT to default $HOME
 ROOT="${HOME}"
-if [ ! -f "./.cskconfig" ]; then
+# find .cskconfig
+# search current woking dir
+if [ -f "./.cskconfig" ]; then
     source ./.cskconfig
-elif [ ! -f "${HOME}/.cskconfig" ]; then
+# search $HOME
+elif [ -f "${HOME}/.cskconfig" ]; then
     source "${HOME}/.cskconfig"
 fi
 
 #BIN="${ROOT}/.config/csk"
 #PROJ="./src/${NAME}"
-
+PRINT_DEBUG ROOT=$ROOT
 PRINT_INFO "copying project templates ..."
 mkdir -p "${ROOT}/.config/csk"
 # install to .config
@@ -83,5 +87,6 @@ PRINT_INFO "create links (csk & ccsk) ..."
 # create easy name soft link
 ln -s "${ROOT}/bin/csk.sh" "${ROOT}/bin/csk"
 ln -s "${ROOT}/bin/ccsk.sh" "${ROOT}/bin/ccsk"
+
 PRINT_INFO "Finished installing."
 PRINT_INFO "$FILE -> Exiting.   @ $DATE"

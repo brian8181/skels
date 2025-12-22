@@ -7,5 +7,4 @@
 DEFAULT=${HOME}
 #ROOT="${DEFAULT}
 
-ROOT="./root"
-ROOT="./test"
+ROOT="./test/tmp"

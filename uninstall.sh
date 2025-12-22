@@ -42,7 +42,16 @@ function PRINT_INFO
 PRINT_INFO "$FILE -> Running ... @ $DATE"
 PRINT_INFO "remove existing project templates ..."
 
-source .cskconfig
+# set $ROOT to default $HOME
+ROOT="${HOME}"
+# find .cskconfig
+# search current woking dir
+if [ -f "./.cskconfig" ]; then
+    source ./.cskconfig
+# search $HOME
+elif [ -f "${HOME}/.cskconfig" ]; then
+    source "${HOME}/.cskconfig"
+fi
 
 # uninstall
 rm -rf "${ROOT}/.config/csk"
