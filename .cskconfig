@@ -4,7 +4,5 @@
 # @date: Fri, Dec 19, 2025 12:52:59 AM
 # @version:    0.0.1
 
-DEFAULT=${HOME}
-#ROOT="${DEFAULT}
-
-ROOT="./test/tmp"
+DEFAULT="${HOME}"
+ROOT="${DEFAULT}"

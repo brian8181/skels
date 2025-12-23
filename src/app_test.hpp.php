@@ -10,15 +10,15 @@
 	$INFO="auto generated with ccsk, create class skeleton";
 	include 'cstyle_file_header.php';
     ?>
-#ifndef _TEST_<?= $APPNAME ?>_H
-#define _TEST_<?= $APPNAME ?>_H
+#ifndef _TEST_<?= $NAME ?>_H
+#define _TEST_<?= $NAME ?>_H
 
 #include <cppunit/Test.h>
 
-class TEST_<?= $APPNAME ?> : public CppUnit::TestFixture
+class TEST_<?= $NAME ?> : public CppUnit::TestFixture
 {
 private:
-    CPPUNIT_TEST_SUITE(TEST_<?= $APPNAME ?>);
+    CPPUNIT_TEST_SUITE(TEST_<?= $NAME ?>);
     CPPUNIT_TEST(testNoOptions);
     CPPUNIT_TEST(testOptionHelp);
     CPPUNIT_TEST(testOptionHelpLong);

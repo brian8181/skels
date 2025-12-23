@@ -19,6 +19,7 @@ DEBUG_MSG="$PRINT_RED_DEBUG: "
 INFO_MSG="$PRINT_GREEN_INFO: "
 VERBOSE=1
 DEBUG=1
+CONFIG_FILE=
 
 if [ -n $VERBOSE ]
 then
@@ -47,7 +48,7 @@ show_help()
     date
 }
 
-OPTSTRING="vha"
+OPTSTRING="vhf"
 while getopts ${OPTSTRING} opt; do
   case ${opt} in
     v)
@@ -59,8 +60,8 @@ while getopts ${OPTSTRING} opt; do
       HELP
       exit 0;
       ;;
-    a)
-      exit 0;
+    f)
+      CONFIG_FILE=${OPTSTRING}
       ;;
 	:)
       PRINT_DEBUG "Option -${OPTARG} requires an argument."

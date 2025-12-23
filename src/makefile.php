@@ -27,7 +27,7 @@ SHELL:=bash
 
 APP=<?= "$APPNAME\n"; ?>
 CXX=g++
-CXXFLAGS=-Wall -std=c++20 -fPIC -DNDEBUG
+CXXFLAGS=-Wall -std=c++20 -fPIC
 CXXEXTRA=-Wno-template-body
 CXXCPP?=
 LDFLAGS?=

@@ -25,7 +25,7 @@
 #include <cppunit/CompilerOutputter.h>
 #include <cppunit/XmlOutputter.h>
 #include <netinet/in.h>
-#include "TEST_<?= $APPNAME ?>.hpp"
+#include "TEST_<?= $NAME ?>.hpp"
 #include <string.h>
 
 using namespace CppUnit;
@@ -34,40 +34,40 @@ using namespace std;
 //HACK!
 int parse_options(int argc, char* argv[]);
 
-void TEST_<?= $APPNAME ?>::setUp()
+void TEST_<?= $NAME ?>::setUp()
 {
 }
 
-void TEST_<?= $APPNAME ?>::tearDown()
+void TEST_<?= $NAME ?>::tearDown()
 {
 }
 
-void TEST_<?= $APPNAME ?>::testNoOptions()
-{
-    CPPUNIT_ASSERT(parse_options(m_argc, m_argv) == 0);
-}
-
-void TEST_<?= $APPNAME ?>::testOptionHelp()
+void TEST_<?= $NAME ?>::testNoOptions()
 {
     CPPUNIT_ASSERT(parse_options(m_argc, m_argv) == 0);
 }
 
-void TEST_<?= $APPNAME ?>::testOptionHelpLong()
+void TEST_<?= $NAME ?>::testOptionHelp()
 {
     CPPUNIT_ASSERT(parse_options(m_argc, m_argv) == 0);
 }
 
-void TEST_<?= $APPNAME ?>::testOptionVerbose()
+void TEST_<?= $NAME ?>::testOptionHelpLong()
 {
     CPPUNIT_ASSERT(parse_options(m_argc, m_argv) == 0);
 }
 
-void TEST_<?= $APPNAME ?>::testOptionVerboseLong()
+void TEST_<?= $NAME ?>::testOptionVerbose()
+{
+    CPPUNIT_ASSERT(parse_options(m_argc, m_argv) == 0);
+}
+
+void TEST_<?= $NAME ?>::testOptionVerboseLong()
 {
    CPPUNIT_ASSERT(parse_options(m_argc, m_argv) == 0);
 }
 
-void TEST_<?= $APPNAME ?>::execute()
+void TEST_<?= $NAME ?>::execute()
 {
     // on head
     char** pstr = new char*;
@@ -85,12 +85,12 @@ void TEST_<?= $APPNAME ?>::execute()
     //char* argv_[3] {(char*)"./App", (char*)"abc", (char*)"abc"};
 }
 
-void TEST_<?= $APPNAME ?>::execute(int argc, char* argv[])
+void TEST_<?= $NAME ?>::execute(int argc, char* argv[])
 {
 
 }
 
-CPPUNIT_TEST_SUITE_REGISTRATION( TEST_<?= $APPNAME ?> );
+CPPUNIT_TEST_SUITE_REGISTRATION( TEST_<?= $NAME ?> );
 
 int main(int argc, char* argv[])
 {
@@ -115,7 +115,7 @@ int main(int argc, char* argv[])
     compileroutputter.write ();
 
     // Output XML for Jenkins CPPunit plugin
-    ofstream xmlFileOut("cppTEST_<?= $APPNAME ?>Results.xml");
+    ofstream xmlFileOut("cppTEST_<?= $NAME ?>Results.xml");
     XmlOutputter xmlOut(&collectedresults, xmlFileOut);
     xmlOut.write();
 
