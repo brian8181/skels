@@ -12,22 +12,22 @@
 	$INFO="auto generated with ccsk, create class skeleton";
 	include 'cstyle_file_header.php'
     ?>
-#ifndef _<?= "$NAME"; ?>_HPP_
-#define _<?= "$NAME"; ?>_HPP_
+#ifndef _<?= "$NAME" ?>_HPP_
+#define _<?= "$NAME" ?>_HPP_
 #include <iostream>
 <?php if(!empty($BASE_NAME)) echo "#include \"$BASE_NAME.hpp\"\n"; ?>
 
 /**
-  * @brief class <?= "$NAME\n"; ?>
+  * @brief class <?= "$NAME\n" ?>
   */
 template< class T>
-class <?= "$NAME"; if(!empty($BASE_NAME)) echo " : public $BASE_NAME"; echo "\n"; ?>
+class <?= "$NAME" ?><?php if(!empty($BASE_NAME)) echo " : public $BASE_NAME"; echo "\n"; ?>
 {
 public:
     /**
      * @brief : default ctor
      */
-    <?= "$NAME"; ?>()
+    <?= "$NAME" ?>()
     {
 
     }
@@ -35,7 +35,7 @@ public:
     /**
      * @brief : copy ctor
      */
-    <?= "$NAME"; ?>( const <?= "$NAME"; ?>& src )
+    <?= "$NAME" ?>( const <?= "$NAME" ?>& src )
     {
 
     }
@@ -43,7 +43,7 @@ public:
     /**
      * @brief : destructor
      */
-    virtual ~<?= "$NAME"; ?>()
+    virtual ~<?= "$NAME" ?>()
     {
 
     }

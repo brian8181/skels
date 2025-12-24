@@ -105,7 +105,7 @@ int main(int argc, char* argv[])
     CPPUNIT_NS::BriefTestProgressListener progress;
     testresult.addListener (&progress);
 
-    // insert test-suite at test-runner by registry#include <stdio.h>
+    // insert test-suite at test-runner by registry
     CPPUNIT_NS::TestRunner testrunner;
     testrunner.addTest (CPPUNIT_NS::TestFactoryRegistry::getRegistry().makeTest ());
     testrunner.run(testresult);

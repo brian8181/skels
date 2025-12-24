@@ -10,8 +10,8 @@
 	$VERSION="version 0.0.1";
     include "cstyle_file_header.php"
     ?>
-#ifndef _<?php echo "$NAME" ?>_HPP
-#define _<?php echo "$NAME" ?>_HPP
+#ifndef _<?= "$NAME" ?>_HPP
+#define _<?= "$NAME" ?>_HPP
 
 #include <string>
 

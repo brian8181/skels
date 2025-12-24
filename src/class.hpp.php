@@ -26,22 +26,22 @@ class <?= "$NAME"; if(!empty($BASE_NAME)) echo " : public $BASE_NAME"; echo "\n"
 {
 public:
 	/**
-	* @brief : default ctor
-	*/
-	<?= "$NAME"; ?>();
+ * @brief : default ctor
+ */
+	<?= "$NAME" ?>() = default;
 
 	<?php if($CCTOR == "TRUE"): ?>
 	/**
 	* @brief : copy ctor
 	*/
-	<?= "$NAME"; ?>( const <?= "$NAME"; ?>& src );
+	<?= "$NAME" ?>( const <?= "$NAME" ?>& src ) = default;
 	<?php endif ?>
 
-	<?php if($CCTOR == "TRUE"): ?>
+	<?php if($DTOR == "TRUE"): ?>
 	/**
 	* @brief : destructor
 	*/
-	virtual ~<?= "$NAME"; ?>();
+	<?= "~$NAME" ?>() = default;
 	<?php endif ?>
 
 	/**

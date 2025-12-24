@@ -11,10 +11,10 @@
 	$VERSION="0.0.1";
 	$INFO="auto generated with ccsk, create class skeleton";
     ?>
-# @name     <?php echo "$APPNAME\n"; ?>
+# @name     <?= "$APPNAME\n"; ?>
 # @file:    CMakeLists.txt
-# @date:    <?php echo "$DATE\n"; ?>
-# @version: <?php echo "$VERSION\n"; ?>
+# @date:    <?= "$DATE\n"; ?>
+# @version: <?= "$VERSION\n"; ?>
 
 cmake_minimum_required(VERSION 3.28.3)
 project(scanner)
@@ -29,14 +29,14 @@ if(CMAKE_SYSTEM_NAME STREQUAL "CYGWIN")
     add_definitions(-DCYGWIN)
 endif()
 
-add_executable(<?php echo "$APPNAME\n"; ?>
-    src/<?php echo "$APPNAME"; ?>.cpp
+add_executable(<?= "$APPNAME\n"; ?>
+    src/<?= "$APPNAME"; ?>.cpp
     src/main.cpp
 )
 
 
-add_library(<?php echo "$APPNAME"; ?>_a STATIC
-    src/<?php echo "$APPNAME"; ?>.cpp
+add_library(<?= "$APPNAME"; ?>_a STATIC
+    src/<?= "$APPNAME"; ?>.cpp
 
 )
 

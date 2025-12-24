@@ -16,22 +16,3 @@
 	include 'cstyle_file_header.php';
     ?>
 #include "<?= "$NAME"; ?>.hpp"
-
-/**
- * @brief : default ctor
- */
-<?= "$NAME::$NAME"; ?>() = default;
-
-<?php if($CCTOR == "TRUE"): ?>
-/**
-  * @brief : copy ctor
-  */
-<?= "$NAME::$NAME"; ?>( const <?= "$NAME"; ?>& src ) = default;
-<?php endif ?>
-
-<?php if($DTOR == "TRUE"): ?>
-/**
-  * @brief : destructor
-  */
-<?= "$NAME::~$NAME"; ?>() = default;
-<?php endif ?>
