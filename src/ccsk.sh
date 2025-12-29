@@ -19,9 +19,10 @@ CPPUNIT=
 DTOR=TRUE
 CCTOR=TRUE
 DCTOR=FALSE
+OVERLOAD_EQUAL=FALSE
 IMP_DEFAULTS=FALSE
 
-OPTSTRING="vcdemh"
+OPTSTRING="vcdeqmh"
 while getopts ${OPTSTRING} opt; do
     case ${opt} in
         v)
@@ -45,6 +46,9 @@ while getopts ${OPTSTRING} opt; do
         m)
             IMP_DEFAULTS=TRUE
             ;;
+        q)
+            OVERLOAD_EQUAL=TRUE
+            ;;
         :)
             echo "Option -${OPTARG} requires an argument."
             exit 1
@@ -60,5 +64,5 @@ shift $(($OPTIND-1))
 NAME=$1
 BASE_NAME=$2
 
-php "$HOME/.config/csk/class.hpp.php" "${NAME}" "${BASE_NAME}" "${DTOR}" "${CCTOR}" "${DCTOR}" "${IMP_DEFAULTS}" "0.0.1" | tee "${NAME}.hpp"
-php "$HOME/.config/csk/class.cpp.php" "${NAME}" "${BASE_NAME}" "${DTOR}" "${CCTOR}" "${DCTOR}" "${IMP_DEFAULTS}" "0.0.1" | tee "${NAME}.cpp"
+php "$HOME/.config/csk/class.hpp.php" "${NAME}" "${BASE_NAME}" "${DTOR}" "${CCTOR}" "${DCTOR}" "${IMP_DEFAULTS}" "${OVERLOAD_EQUAL}" "0.0.1" | tee "${NAME}.hpp"
+php "$HOME/.config/csk/class.cpp.php" "${NAME}" "${BASE_NAME}" "${DTOR}" "${CCTOR}" "${DCTOR}" "${IMP_DEFAULTS}" "${OVERLOAD_EQUAL}" "0.0.1" | tee "${NAME}.cpp"

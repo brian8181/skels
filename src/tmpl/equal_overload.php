@@ -1,6 +1,6 @@
-<php? # equal operator overload  ?>
+<?php # equal operator overload  ?>
 
-bool <?php echo $CLASSNAME ?>::operator==( const <?php echo $CLASSNAME ?>& that)
+bool <?php echo $NAME ?>::operator==( const <?php echo $NAME ?>& that )
 {
     return false;
 }

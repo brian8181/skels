@@ -114,7 +114,8 @@ PRINT_DEBUG ROOT=$ROOT
 PRINT_INFO "copying project templates ..."
 mkdir -p "${ROOT}/.config/csk"
 # install to .config
-cp src/*.php "${ROOT}/.config/csk"
+#cp src/*.php "${ROOT}/.config/csk"
+cp -rf src/* "${ROOT}/.config/csk"
 #  install to local bin
 cp "src/csk.sh" "${ROOT}/bin/"
 cp "src/ccsk.sh" "${ROOT}/bin/"
