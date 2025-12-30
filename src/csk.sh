@@ -1,18 +1,44 @@
 #!/bin/bash
 
 # @file: csk (csk.sh)
-# @date: Fri, Dec 19, 2025 12:52:59 AM
+# @date: Tue, Dec 30, 2025  4:45:03 AM
 # @version:    0.0.1
 # @info: create project skeleton
+
+FILE='csk.sh'
+VERSION='0.0.1'
+FILE_DATE='Tue, Dec 30, 2025  4:45:03 AM'
 
 FMT_FG_RED='\e[31m'
 FMT_FG_GREEN='\e[32m'
 FMT_RESET='\e[0m'
+PRINT_RED_DEBUG=${FMT_FG_RED}DEBUG${FMT_RESET}
+PRINT_GREEN_INFO=${FMT_FG_GREEN}INFO${FMT_RESET}
+DATE=$(date "+%H:%M:%S:%s")
 
 DEBUG_MSG="$PRINT_RED_DEBUG: "
 INFO_MSG="$PRINT_GREEN_INFO: "
 VERBOSE=1
 DEBUG=
+CONFIG_FILE=
+
+if [ -n $VERBOSE ]
+then
+	echo ${VERBOSE:+"File - $FILE"}
+	echo ${VERBOSE:+"Version - $VERSION"}
+	echo ${VERBOSE:+"Date - $FILE_DATE"}
+fi
+
+function PRINT_DEBUG
+{
+    MSG=${DEBUG_MSG}$1
+    echo -e ${DEBUG:+"$MSG"}
+}
+function PRINT_INFO
+{
+    MSG=${INFO_MSG}$1
+    echo -e ${VERBOSE:+"$MSG"}
+}
 
 CMAKE=
 CPPUNIT=
@@ -45,12 +71,15 @@ while getopts ${OPTSTRING} opt; do
             ;;
         t)
             CPPUNIT="TRUE"
+            PRINT_DEBUG CPPUNIT=$CPPUNIT
             ;;
         c)
             CMAKE="TRUE"
+            PRINT_DEBUG CMAKE=$CMAKE
             ;;
         s)
             SIMPLE="TRUE"
+            PRINT_DEBUG SIMPLE=$SIMPLE
             ;;
         :)
             echo "Option -${OPTARG} requires an argument."

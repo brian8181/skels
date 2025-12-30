@@ -15,6 +15,7 @@
     $VERSION="0.0.1";
 	$INFO="auto generated with ccsk, create class skeleton";
 	include 'cstyle_file_header.php';
+	include 'noutility.php';
     ?>
 #ifndef _<?= "$NAME"; ?>_HPP_
 #define _<?= "$NAME"; ?>_HPP_
@@ -47,17 +48,11 @@ public:
 	<?php endif ?>
 
 	<?php
+		echo "TEST";
 		if($OVERLOAD_EQUAL == "TRUE")
 		{
-			// Start output buffering
-			ob_start();
-			include "tmpl/equal_overload.php";
-			// Get the buffered content
-			$included_content = ob_get_clean();
-			// Prepend a tab to every new line in the content
-			$tabbed_content = str_replace("\n", "\n\t", $included_content);
-			// Prepend the first tab and echo the result
-			echo "\t" . $tabbed_content;
+			echo "TEST2";
+			echo tabify_include("tmpl/equal_overload.php");
 		}
 	?>
 

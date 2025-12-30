@@ -107,10 +107,12 @@ elif [ -f "${HOME}/bin/.cskconfig" ]; then
     source "${HOME}/bin/.cskconfig"
 fi
 
-#CONFIG="${ROOT}/.config/csk"
-#BIN=$ROOT/bin
-
+CONFIG="${ROOT}/.config/csk"
+BIN=$ROOT/bin
 PRINT_DEBUG ROOT=$ROOT
+PRINT_DEBUG BIN=$BIN
+PRINT_DEBUG CONFIG=$CONFIG
+
 PRINT_INFO "copying project templates ..."
 mkdir -p "${ROOT}/.config/csk"
 # install to .config
