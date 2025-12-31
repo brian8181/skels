@@ -1,0 +1,7 @@
+# @project:  new
+# @file:    .gitignore
+# @date:    Tue Dec 30 20:45:27 CST 2025
+# @version: 0.0.1
+# @brief:   git ignore file
+
+build/*
