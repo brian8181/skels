@@ -27,45 +27,7 @@
   */
 class <?= "$NAME"; if(!empty($BASE_NAME)) echo " : public $BASE_NAME"; echo "\n"; ?>
 {
-public:
-	/**
- * @brief : default ctor
- */
-	<?= "$NAME" ?>() = default;
-
-	<?php if($CCTOR == "TRUE"): ?>
-	/**
-	* @brief : copy ctor
-	*/
-	<?= "$NAME" ?>( const <?= "$NAME" ?>& src ) = default;
-	<?php endif ?>
-
-	<?php if($DTOR == "TRUE"): ?>
-	/**
-	* @brief : destructor
-	*/
-	<?= "~$NAME" ?>() = default;
-	<?php endif ?>
-
-	<?php
-		echo "TEST";
-		if($OVERLOAD_EQUAL == "TRUE")
-		{
-			echo "TEST2";
-			echo tabify_include("tmpl/equal_overload.php");
-		}
-	?>
-
-	/**
-	<?php
-		echo "  * @brief \n\t";
-		echo "  * @brief c++ comment ...\n\t";
-		echo "  * @brief place future addtions here ...\n\t  *\n";
-	?>
-	*/
-
-private:
-
+<?php include "class.body.php" ?>
 };
 
 #endif

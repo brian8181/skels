@@ -19,4 +19,15 @@
         echo sprintf("\t%s", $tabbed_content);
     }
 
+    function includeWithVariables($filePath, $variables = [])
+    {
+        // extract variables to a local namespace within the function scope
+        extract($variables);
+        // output buffering
+        ob_start();
+        // include the template file
+        include $filePath;
+        // end buffering and return its contents
+        return ob_get_clean();
+    }
     ?>
