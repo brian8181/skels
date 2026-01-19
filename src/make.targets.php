@@ -14,7 +14,6 @@ all: $(BLD)/<?= $APPNAME ?> $(BLD)/lib<?= $APPNAME ?>.so $(BLD)/lib<?= $APPNAME 
 $(BLD)/<?= $APPNAME ?>: $(OBJ)/main.o $(OBJ)/<?= $APPNAME ?>.o
 	 $(CXX) $(CXXFLAGS) $(OBJ)/main.o $(OBJ)/<?= $APPNAME ?>.o -o $(BLD)/<?= $APPNAME ?>
 
-
 $(BLD)/lib<?= $APPNAME ?>.so: $(OBJ)/main.o $(BLD)/<?= $APPNAME ?>.o
 	$(CXX) $(CXXFLAGS) $(CXXEXTRA) --shared $(OBJ)/main.o $(BLD)/<?= $APPNAME ?>.o -o $(BLD)/lib<?= $APPNAME ?>.so
 	-chmod 755 $(BLD)/lib<?= $APPNAME ?>.so
@@ -26,7 +25,7 @@ $(BLD)/lib<?= $APPNAME ?>.a: $(OBJ)/main.o $(BLD)/<?= $APPNAME ?>.o
 $(OBJ)/<?= $APPNAME ?>.o: $(SRC)/<?= $APPNAME ?>.cpp
 	$(CXX) $(CXXFLAGS) $(CXXEXTRA) -c $(SRC)/<?= $APPNAME ?>.cpp -o $(OBJ)/<?= $APPNAME ?>.o
 
-$(BLD)/TEST_<?= $APPNAME ?>: $(TST)/TEST_config.cpp $(TST)/TEST_<?= $APPNAME ?>.cpp $(TST)/main.cpp
+$(BLD)/<?= $APPNAME ?>_test: $(SRC)/<?= $APPNAME ?>_test.cpp
 	$(CXX) $(CXXFLAGS) $^ $(LDFLAGS) -o $@
 
 # rules <?= '<?= "\nTEST\n ?>' ?>

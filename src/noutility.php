@@ -30,4 +30,5 @@
         // end buffering and return its contents
         return ob_get_clean();
     }
+
     ?>

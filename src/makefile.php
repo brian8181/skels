@@ -33,9 +33,10 @@ CXXCPP?=
 LDFLAGS?=
 LIBS?=
 
-SRC?=src
-BLD?=build
-OBJ?=build
+SRC = src
+BLD = build
+OBJ = build
+TST = build
 
 # lib settings
 LIBS=-L/usr/lib -L/usr/lib64 -L/usr/local/lib -L/usr/local/lib64

@@ -25,7 +25,7 @@
 #include <cppunit/CompilerOutputter.h>
 #include <cppunit/XmlOutputter.h>
 #include <netinet/in.h>
-#include "TEST_<?= $NAME ?>.hpp"
+#include "<?= $NAME ?>_test.hpp"
 #include <string.h>
 
 using namespace CppUnit;
