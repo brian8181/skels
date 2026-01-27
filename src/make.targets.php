@@ -62,8 +62,8 @@ help:
 	@echo
 	@echo  '   -Make Targets ...'
 	@echo
-	@echo  '        * all                         - build all'
+	@echo  '        * all                              - build all'
 	@echo  '        * $(BLD)/<?= $APPNAME ?>:          - re/build <?= $APPNAME ?>'
 	@echo  '        * $(BLD)/<?= $APPNAME ?>_utest:    - re/build <?= $APPNAME ?>_utest, unit testing'
-	@echo  '        * clean                       - remove most generated files but keep the config'
+	@echo  '        * clean                            - remove most generated files but keep the config'
 	@echo
