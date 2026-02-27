@@ -29,9 +29,9 @@ APP=<?= "$APPNAME\n"; ?>
 CXX=g++
 CXXFLAGS=-Wall -std=c++20 -fPIC
 CXXEXTRA=-Wno-template-body
-CXXCPP?=
-LDFLAGS?=
-LIBS?=
+CXXCPP=
+LDFLAGS=
+LIBS=
 
 SRC = src
 BLD = build
