@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # @file: ccsk (ccsk.sh)
 # @date: Sat, Sep 20, 2025  9:24:24 PM

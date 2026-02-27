@@ -1,3 +1,4 @@
+#!/usr/bin/env php
 <?php
 	/*
     *  @brief program main entry point

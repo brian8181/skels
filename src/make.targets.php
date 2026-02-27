@@ -1,3 +1,4 @@
+#!/usr/bin/env php
 <?php
 	/*
 	*  @brief gnu make file targets

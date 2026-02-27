@@ -1,4 +1,4 @@
-#!#/bin/php
+#!/usr/bin/env php
 <?php
 	/*
   *  @brief create class skeleton
@@ -7,6 +7,7 @@
 	*  @version 0.0.1
 	*/
   $NAME=$argv[1];
+  //$BASE_NAME=;     // unused
   $DTOR=$argv[3];
   $CCTOR=$argv[4];
   $DCTOR=$argv[5];

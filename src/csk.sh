@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # @file: csk (csk.sh)
 # @date: Tue, Dec 30, 2025  4:45:03 AM

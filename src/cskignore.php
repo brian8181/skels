@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env php
 
 # @file: .cskconfig
 # @date: Fri, Dec 19, 2025 12:52:59 AM
