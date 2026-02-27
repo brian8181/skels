@@ -116,7 +116,6 @@ PRINT_DEBUG CONFIG=$CONFIG
 PRINT_INFO "copying project templates ..."
 mkdir -p "${ROOT}/.config/csk"
 # install to .config
-#cp src/*.php "${ROOT}/.config/csk"
 cp -rf src/* "${ROOT}/.config/csk"
 #  install to local bin
 cp "src/csk.sh" "${ROOT}/bin/"
@@ -126,7 +125,7 @@ PRINT_INFO "set permissions ..."
 # set exe perm just in case
 chmod +x "${ROOT}/bin/csk.sh"
 chmod +x "${ROOT}/bin/ccsk.sh"
-chmod +x "${ROOT}"/.config/csk/*.php
+chmod +x "${ROOT}/.config/csk/*.php"
 
 PRINT_INFO "create links (csk & ccsk) ..."
 # create easy name soft link
