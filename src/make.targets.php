@@ -10,7 +10,7 @@
     $DATE=$argv[2];
 	$VERSION=$argv[3];
     ?>
-all: $(BLD)/<?= $APPNAME ?> $(BLD)/lib<?= $APPNAME ?>.so $(BLD)/lib<?= $APPNAME ?>.a
+all: $(BLD)/<?= $APPNAME ?> $(BLD)/lib<?= $APPNAME ?>.so $(BLD)/lib<?= $APPNAME ?>.a $(BLD)/TEST_<?= $APPNAME ?>
 
 $(BLD)/<?= $APPNAME ?>: $(OBJ)/main.o $(OBJ)/<?= $APPNAME ?>.o
 	 $(CXX) $(CXXFLAGS) $(OBJ)/main.o $(OBJ)/<?= $APPNAME ?>.o -o $(BLD)/<?= $APPNAME ?>
@@ -26,7 +26,7 @@ $(BLD)/lib<?= $APPNAME ?>.a: $(OBJ)/main.o $(BLD)/<?= $APPNAME ?>.o
 $(OBJ)/<?= $APPNAME ?>.o: $(SRC)/<?= $APPNAME ?>.cpp
 	$(CXX) $(CXXFLAGS) $(CXXEXTRA) -c $(SRC)/<?= $APPNAME ?>.cpp -o $(OBJ)/<?= $APPNAME ?>.o
 
-$(BLD)/<?= $APPNAME ?>_test: $(SRC)/<?= $APPNAME ?>_test.cpp
+$(BLD)/TEST_<?= $APPNAME ?>: $(OBJ)/<?= $APPNAME ?>.o $(OBJ)/TEST_<?= $APPNAME ?>.o
 	$(CXX) $(CXXFLAGS) $^ $(LDFLAGS) -o $@
 
 # rules <?= '<?= "\nTEST\n ?>' ?>

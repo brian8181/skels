@@ -126,8 +126,8 @@ touch "${NAME}.hpp" "${NAME}.cpp" "${NAME}_test.hpp" "${NAME}_test.cpp"
 php ${CONFIG}/main.cpp.php "${NAME}" "$(date)" "${SIMPLE}" > main.cpp
 php ${CONFIG}/app.hpp.php "${NAME}" "$(date)" > "${NAME}.hpp"
 php ${CONFIG}/app.cpp.php "${NAME}" "$(date)" > "${NAME}.cpp"
-php ${CONFIG}/app_test.hpp.php "${NAME}_test" "$(date)" > "${NAME}_test.hpp"
-php ${CONFIG}/app_test.cpp.php "${NAME}_test" "$(date)" > "${NAME}_test.cpp"
+php ${CONFIG}/app_test.hpp.php "${NAME}" "$(date)" > "TEST_${NAME}.hpp"
+php ${CONFIG}/app_test.cpp.php "${NAME}" "$(date)" > "TEST_${NAME}.cpp"
 php ${CONFIG}/bash_color.hpp.php "${NAME}" "$(date)" > bash_color.hpp
 php ${CONFIG}/config.hpp.php "${NAME}" "$(date)" > config.hpp
 popd
