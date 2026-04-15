@@ -1,5 +1,5 @@
 #!/usr/bin/env php
-<php? # destructor  ?>
+<?php /** destructor */ ?>
 
 <?php echo $CLASSNAME ?>::~<?php echo $CLASSNAME ?>()
 {
