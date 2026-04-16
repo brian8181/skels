@@ -1,1 +1,1 @@
-<php? # greaterthan_equal operator overload  ?>
+<php? /** */  ?>

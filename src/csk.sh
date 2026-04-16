@@ -119,6 +119,7 @@ pushd "${NAME}"
 touch readme readme.md news copying authors changelog
 php ${CONFIG}/makefile.php "${NAME}" "$(date)" "version 0.0.1" > makefile
 php ${CONFIG}/gitignore.php "${NAME}" "$(date)" "version 0.0.1" > .gitignore
+php ${CONFIG}/cskconfig.php "${NAME}" "$(date)" "version 0.0.1" > .cskconfig
 php ${CONFIG}/CMakeLists.txt.php "${NAME}" > CMakeLists.txt
 
 pushd ./src
