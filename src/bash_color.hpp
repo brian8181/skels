@@ -2,7 +2,6 @@
  * @file    skels.hpp
  * @version version 0.0.1
  * @date    Fri, 19 Dec 2025 20:57:42 +0000
- * @info    ...
  */
 #ifndef _BASH_COLOR_HPP
 #define _BASH_COLOR_HPP

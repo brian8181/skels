@@ -44,7 +44,7 @@ CMAKE=
 CPPUNIT=
 SIMPLE=FALSE
 
-show_help()
+function print_help()
 {
     echo "Usage:"
     echo "csk -[vhtcs] PROJECT_NAME"
@@ -53,10 +53,12 @@ show_help()
     echo "-t, include cppunit test"
     echo "-c, create cmake project"
     echo "-s, create simple project, (single file main enty point)"
+	echo "-i interactive mode, ask for options"
+	echo "Created by Brian on $(date)"
     date
 }
 
-OPTSTRING="vhts"
+OPTSTRING="vhtsi"
 while getopts ${OPTSTRING} opt; do
     case ${opt} in
         v)
@@ -66,9 +68,14 @@ while getopts ${OPTSTRING} opt; do
             ;;
         h)
             #HELP
-            show_help
+            print_help
             exit 0;
             ;;
+		i)
+			#INTERACTIVE
+			echo "Interactive mode not implemented yet."
+			exit 0;
+			;;	
         t)
             CPPUNIT="TRUE"
             PRINT_DEBUG CPPUNIT=$CPPUNIT

@@ -40,6 +40,17 @@ function PRINT_INFO
     echo -e ${VERBOSE:+"$MSG"}
 }
 
+function print_help()
+{
+	echo "Usage:"
+	echo "ccsk -[vhtc] PROJECT_NAME [BASE_CLASS_NAME]"
+	echo "-h, display this help message"
+	echo "-v, display version"
+	echo "-t, include cppunit test"
+	echo "-c, create cmake project"
+	date
+}
+
 CMAKE=
 CPPUNIT=
 CTOR=FALSE
@@ -48,7 +59,7 @@ CCTOR=TRUE
 OVERLOAD_EQUAL=FALSE
 IMP_DEFAULTS=FALSE
 
-OPTSTRING="vcdeqmh"
+OPTSTRING="vcdeqmhi"
 while getopts ${OPTSTRING} opt; do
     case ${opt} in
         v)
@@ -57,8 +68,8 @@ while getopts ${OPTSTRING} opt; do
             exit 0
             ;;
         h)
-            HELP
-            exit 0;
+            print_help
+			exit 0;
             ;;
         c)
             CCTOR="TRUE"
@@ -66,11 +77,11 @@ while getopts ${OPTSTRING} opt; do
             ;;
         d)
             DTOR="TRUE"
-            PRINT_DEBUG DCTOR=$DCTOR
+            PRINT_DEBUG DTOR=$DTOR
             ;;
         e)
             CTOR=TRUE
-            PRINT_DEBUG DCTOR=$CTOR
+            PRINT_DEBUG CTOR=$CTOR
             ;;
         m)
             IMP_DEFAULTS=TRUE
@@ -78,7 +89,7 @@ while getopts ${OPTSTRING} opt; do
             ;;
         q)
             OVERLOAD_EQUAL=TRUE
-            PRINT_DEBUG OVERLOAD=$OVERLOAD
+            PRINT_DEBUG OVERLOAD_EQUAL=$OVERLOAD_EQUAL
             ;;
         :)
             echo "Option -${OPTARG} requires an argument."

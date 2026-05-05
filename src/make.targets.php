@@ -10,10 +10,10 @@
     $DATE=$argv[2];
 	$VERSION=$argv[3];
     ?>
-all: $(BLD)/<?= $APPNAME ?> $(BLD)/lib<?= $APPNAME ?>.so $(BLD)/lib<?= $APPNAME ?>.a $(BLD)/TEST_<?= $APPNAME ?>
+all: $(BLD)/<?= $APPNAME ?> $(BLD)/lib<?= $APPNAME ?>.so $(BLD)/lib<?= $APPNAME ?>.a $(BLD)/TEST_<?= $APPNAME ?> #
 
 $(BLD)/<?= $APPNAME ?>: $(OBJ)/main.o $(OBJ)/<?= $APPNAME ?>.o
-	 $(CXX) $(CXXFLAGS) $(OBJ)/main.o $(OBJ)/<?= $APPNAME ?>.o -o $(BLD)/<?= $APPNAME ?>
+	 $(CXX) $(CXXFLAGS) $(OBJ)/main.o $(OBJ)/<?= $APPNAME ?>.o -o $(BLD)/<?= $APPNAME ?> #
 
 $(BLD)/lib<?= $APPNAME ?>.so: $(OBJ)/main.o $(BLD)/<?= $APPNAME ?>.o
 	$(CXX) $(CXXFLAGS) $(CXXEXTRA) --shared $(OBJ)/main.o $(BLD)/<?= $APPNAME ?>.o -o $(BLD)/lib<?= $APPNAME ?>.so
