@@ -16,7 +16,12 @@
 // * No part of the Inflex project, including this file, may be copied, modified, or distributed except according to those terms.
 // *
 
-#pragma once
+#ifndef CONFIG_HPP
+#define CONFIG_HPP
+
 #ifndef CYGWIN
 #define CYGWIN true
+
+#endif
+
 #endif

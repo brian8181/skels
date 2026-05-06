@@ -75,7 +75,7 @@ while getopts ${OPTSTRING} opt; do
 			#INTERACTIVE
 			echo "Interactive mode not implemented yet."
 			exit 0;
-			;;	
+			;;
         t)
             CPPUNIT="TRUE"
             PRINT_DEBUG CPPUNIT=$CPPUNIT
@@ -130,7 +130,7 @@ php ${CONFIG}/cskconfig.php "${NAME}" "$(date)" "version 0.0.1" > .cskconfig
 php ${CONFIG}/CMakeLists.txt.php "${NAME}" > CMakeLists.txt
 
 pushd ./src
-touch "${NAME}.hpp" "${NAME}.cpp" "${NAME}_test.hpp" "${NAME}_test.cpp"
+touch "${NAME}.hpp" "${NAME}.cpp" "TEST_${NAME}.hpp" "TEST_${NAME}.cpp"
 php ${CONFIG}/main.cpp.php "${NAME}" "$(date)" "${SIMPLE}" > main.cpp
 php ${CONFIG}/app.hpp.php "${NAME}" "$(date)" > "${NAME}.hpp"
 php ${CONFIG}/app.cpp.php "${NAME}" "$(date)" > "${NAME}.cpp"

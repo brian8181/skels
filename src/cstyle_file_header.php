@@ -24,5 +24,4 @@
  * @file    <?= "${NAME}.hpp\n"; ?>
  * @version <?= "${VERSION}\n"; ?>
  * @date    <?= date(DATE_RFC2822) . "\n"; ?>
- * @info    <?= "...\n"; ?>
  */
